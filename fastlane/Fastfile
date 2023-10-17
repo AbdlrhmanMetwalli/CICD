@@ -26,14 +26,14 @@ platform :ios do
 
       scan(
           cloned_source_packages_path: packages_path,
-          disable_package_automatic_updates: true,
+          disable_package_automatic_updates: options[:disable_package_automatic_updates],
           skip_package_dependencies_resolution: options[:skip_package_dependencies_resolution],
 	  derived_data_path: derived_data_path,
 	  skip_build: options[:skip_build],
        )
     else
       scan(
-          disable_package_automatic_updates: true,
+          disable_package_automatic_updates: options[:disable_package_automatic_updates],
           skip_package_dependencies_resolution: options[:skip_package_dependencies_resolution],
        )
     end
