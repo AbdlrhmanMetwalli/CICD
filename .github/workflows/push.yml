@@ -23,6 +23,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-packages-
 
+      - name: Set IgnoreFileSystemDeviceInodeChanges flag
+        run: defaults write com.apple.dt.XCBuild IgnoreFileSystemDeviceInodeChanges -bool YES
+
       - name: Run Tests (No Cache)
         if: steps.packages-cache.outputs.cache-hit != 'true'
         run: fastlane tests clone_source_packages:true
