@@ -20,5 +20,5 @@ struct ContentView: View {
 }
 
 struct Test {
-    var test = "test1"
+    var test = "test"
 }
