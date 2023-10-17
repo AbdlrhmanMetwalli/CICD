@@ -23,6 +23,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-packages-
 
+      - uses: chetan/git-restore-mtime-action@v2
+
       - name: Run Tests (No Cache)
         if: steps.packages-cache.outputs.cache-hit != 'true'
         run: fastlane tests clone_source_packages:true
