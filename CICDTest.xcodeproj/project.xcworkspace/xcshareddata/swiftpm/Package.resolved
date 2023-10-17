@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "lottie-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-ios",
+      "state" : {
+        "revision" : "45517c3cfec9469bbdd4f86e32393c28ae9df0bc",
+        "version" : "4.3.3"
+      }
+    },
+    {
       "identity" : "material",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/CosmicMind/Material",
@@ -25,15 +34,6 @@
       "state" : {
         "revision" : "808ac0cf1b67c5e4163ee867dd6c056836fcbc58",
         "version" : "3.1.3"
-      }
-    },
-    {
-      "identity" : "promisekit?ref=advancedswift.com",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/mxcl/PromiseKit?ref=advancedswift.com",
-      "state" : {
-        "revision" : "cb70b070cde06837cd10a1febdf6105c1a3bb348",
-        "version" : "8.1.1"
       }
     },
     {

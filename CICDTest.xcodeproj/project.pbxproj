@@ -15,7 +15,7 @@
 		28167AA62ADC1AAC002D5570 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 28167AA52ADC1AAC002D5570 /* Alamofire */; };
 		282516012ADC1F9900CE1D55 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 282516002ADC1F9900CE1D55 /* SQLite */; };
 		282EE4B62ADC23CF00A775ED /* Material in Frameworks */ = {isa = PBXBuildFile; productRef = 282EE4B52ADC23CF00A775ED /* Material */; };
-		289419812ADF3E7A00DDCFD1 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 289419802ADF3E7A00DDCFD1 /* PromiseKit */; };
+		289419842ADF42C000DDCFD1 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 289419832ADF42C000DDCFD1 /* Lottie */; };
 		28E736792ADC1E9E00E40B02 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 28E736782ADC1E9E00E40B02 /* SkeletonView */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				289419812ADF3E7A00DDCFD1 /* PromiseKit in Frameworks */,
+				289419842ADF42C000DDCFD1 /* Lottie in Frameworks */,
 				282516012ADC1F9900CE1D55 /* SQLite in Frameworks */,
 				28E736792ADC1E9E00E40B02 /* SkeletonView in Frameworks */,
 				28167AA62ADC1AAC002D5570 /* Alamofire in Frameworks */,
@@ -128,7 +128,7 @@
 				28E736782ADC1E9E00E40B02 /* SkeletonView */,
 				282516002ADC1F9900CE1D55 /* SQLite */,
 				282EE4B52ADC23CF00A775ED /* Material */,
-				289419802ADF3E7A00DDCFD1 /* PromiseKit */,
+				289419832ADF42C000DDCFD1 /* Lottie */,
 			);
 			productName = CICDTest;
 			productReference = 280E0D452ABB48D800D6A4E9 /* CICDTest.app */;
@@ -185,7 +185,7 @@
 				28E736772ADC1E9E00E40B02 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 				282515FF2ADC1F9900CE1D55 /* XCRemoteSwiftPackageReference "SQLite" */,
 				282EE4B42ADC23CF00A775ED /* XCRemoteSwiftPackageReference "Material" */,
-				2894197F2ADF3E7A00DDCFD1 /* XCRemoteSwiftPackageReference "PromiseKit" */,
+				289419822ADF42C000DDCFD1 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 280E0D462ABB48D800D6A4E9 /* Products */;
 			projectDirPath = "";
@@ -519,12 +519,12 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		2894197F2ADF3E7A00DDCFD1 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+		289419822ADF42C000DDCFD1 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mxcl/PromiseKit?ref=advancedswift.com";
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.0;
+				minimumVersion = 4.0.0;
 			};
 		};
 		28E736772ADC1E9E00E40B02 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
@@ -553,10 +553,10 @@
 			package = 282EE4B42ADC23CF00A775ED /* XCRemoteSwiftPackageReference "Material" */;
 			productName = Material;
 		};
-		289419802ADF3E7A00DDCFD1 /* PromiseKit */ = {
+		289419832ADF42C000DDCFD1 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2894197F2ADF3E7A00DDCFD1 /* XCRemoteSwiftPackageReference "PromiseKit" */;
-			productName = PromiseKit;
+			package = 289419822ADF42C000DDCFD1 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 		28E736782ADC1E9E00E40B02 /* SkeletonView */ = {
 			isa = XCSwiftPackageProductDependency;
