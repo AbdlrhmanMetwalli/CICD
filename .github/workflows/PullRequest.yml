@@ -1,9 +1,7 @@
 name: Pull Request
 
 on:
-  pull_request:
-    branches:
-      - dev
+  push:
   workflow_dispatch:
 
 jobs:
@@ -34,4 +32,4 @@ jobs:
 
       - name: Run Tests (Cache)
         if: steps.packages-cache.outputs.cache-hit == 'true'
-        run: fastlane tests clone_source_packages:true skip_package_dependencies_resolution:true
+        run: fastlane tests clone_source_packages:true skip_package_dependencies_resolution:true skip_build:true
