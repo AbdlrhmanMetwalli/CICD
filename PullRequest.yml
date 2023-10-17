@@ -1,0 +1,43 @@
+name: Pull Request
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: deepakputhraya/action-branch-name@master
+        with:
+          regex: '([a-z])+\/([a-z])+'
+          allowed_prefixes: 'feature,bugfix'
+          ignore: main,dev
+          min_length: 5
+          max_length: 20
+
+      - uses: actions/checkout@v2
+
+      - name: Run swiftlint
+        run: fastlane lint
+
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Cache packages
+        uses: actions/cache@v3
+        id: packages-cache
+        with:
+          path: cache
+          key: ${{ runner.os }}-packages-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-packages-
+
+      - name: Run Tests (No Cache)
+        if: steps.packages-cache.outputs.cache-hit != 'true'
+        run: fastlane tests clone_source_packages:true
+
+      - name: Run Tests (Cache)
+        if: steps.packages-cache.outputs.cache-hit == 'true'
+        run: fastlane tests clone_source_packages:true skip_package_dependencies_resolution:true
