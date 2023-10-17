@@ -32,4 +32,4 @@ jobs:
 
       - name: Run Tests (Cache)
         if: steps.packages-cache.outputs.cache-hit == 'true'
-        run: fastlane tests clone_source_packages:true
+        run: fastlane tests clone_source_packages:true skip_package_dependencies_resolution:true
