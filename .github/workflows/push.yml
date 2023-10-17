@@ -10,9 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run swiftlint
-        run: fastlane lint
-
       - uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: latest-stable

@@ -28,6 +28,15 @@
       }
     },
     {
+      "identity" : "promisekit?ref=advancedswift.com",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mxcl/PromiseKit?ref=advancedswift.com",
+      "state" : {
+        "revision" : "cb70b070cde06837cd10a1febdf6105c1a3bb348",
+        "version" : "8.1.1"
+      }
+    },
+    {
       "identity" : "skeletonview",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Juanpe/SkeletonView",
