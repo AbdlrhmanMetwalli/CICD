@@ -10,6 +10,6 @@ import XCTest
 
 final class CICDTestTests: XCTestCase {
     func testExample() throws {
-        XCTAssertEqual(Test().test, "test")
+        XCTAssertEqual(Test().test, "test1")
     }
 }
