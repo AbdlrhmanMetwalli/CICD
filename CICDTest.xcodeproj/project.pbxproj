@@ -15,6 +15,11 @@
 		28167AA62ADC1AAC002D5570 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 28167AA52ADC1AAC002D5570 /* Alamofire */; };
 		282516012ADC1F9900CE1D55 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 282516002ADC1F9900CE1D55 /* SQLite */; };
 		282EE4B62ADC23CF00A775ED /* Material in Frameworks */ = {isa = PBXBuildFile; productRef = 282EE4B52ADC23CF00A775ED /* Material */; };
+		2837AF0B2B0A5C2E0072B2D1 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 2837AF0A2B0A5C2E0072B2D1 /* Core */; };
+		2837AF0D2B0A5C2E0072B2D1 /* DataPersistence in Frameworks */ = {isa = PBXBuildFile; productRef = 2837AF0C2B0A5C2E0072B2D1 /* DataPersistence */; };
+		2837AF0F2B0A5C2E0072B2D1 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 2837AF0E2B0A5C2E0072B2D1 /* Logger */; };
+		2837AF112B0A5C2E0072B2D1 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 2837AF102B0A5C2E0072B2D1 /* Networking */; };
+		2837AF132B0A5C2E0072B2D1 /* PermissionManager in Frameworks */ = {isa = PBXBuildFile; productRef = 2837AF122B0A5C2E0072B2D1 /* PermissionManager */; };
 		289419842ADF42C000DDCFD1 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 289419832ADF42C000DDCFD1 /* Lottie */; };
 		28E736792ADC1E9E00E40B02 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 28E736782ADC1E9E00E40B02 /* SkeletonView */; };
 /* End PBXBuildFile section */
@@ -44,11 +49,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2837AF112B0A5C2E0072B2D1 /* Networking in Frameworks */,
+				2837AF0D2B0A5C2E0072B2D1 /* DataPersistence in Frameworks */,
 				289419842ADF42C000DDCFD1 /* Lottie in Frameworks */,
 				282516012ADC1F9900CE1D55 /* SQLite in Frameworks */,
 				28E736792ADC1E9E00E40B02 /* SkeletonView in Frameworks */,
 				28167AA62ADC1AAC002D5570 /* Alamofire in Frameworks */,
 				282EE4B62ADC23CF00A775ED /* Material in Frameworks */,
+				2837AF132B0A5C2E0072B2D1 /* PermissionManager in Frameworks */,
+				2837AF0F2B0A5C2E0072B2D1 /* Logger in Frameworks */,
+				2837AF0B2B0A5C2E0072B2D1 /* Core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +139,11 @@
 				282516002ADC1F9900CE1D55 /* SQLite */,
 				282EE4B52ADC23CF00A775ED /* Material */,
 				289419832ADF42C000DDCFD1 /* Lottie */,
+				2837AF0A2B0A5C2E0072B2D1 /* Core */,
+				2837AF0C2B0A5C2E0072B2D1 /* DataPersistence */,
+				2837AF0E2B0A5C2E0072B2D1 /* Logger */,
+				2837AF102B0A5C2E0072B2D1 /* Networking */,
+				2837AF122B0A5C2E0072B2D1 /* PermissionManager */,
 			);
 			productName = CICDTest;
 			productReference = 280E0D452ABB48D800D6A4E9 /* CICDTest.app */;
@@ -186,6 +201,7 @@
 				282515FF2ADC1F9900CE1D55 /* XCRemoteSwiftPackageReference "SQLite" */,
 				282EE4B42ADC23CF00A775ED /* XCRemoteSwiftPackageReference "Material" */,
 				289419822ADF42C000DDCFD1 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				2837AF092B0A5C2E0072B2D1 /* XCRemoteSwiftPackageReference "core-ios" */,
 			);
 			productRefGroup = 280E0D462ABB48D800D6A4E9 /* Products */;
 			projectDirPath = "";
@@ -519,6 +535,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		2837AF092B0A5C2E0072B2D1 /* XCRemoteSwiftPackageReference "core-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/btechlabs/core-ios.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		289419822ADF42C000DDCFD1 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
@@ -552,6 +576,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 282EE4B42ADC23CF00A775ED /* XCRemoteSwiftPackageReference "Material" */;
 			productName = Material;
+		};
+		2837AF0A2B0A5C2E0072B2D1 /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2837AF092B0A5C2E0072B2D1 /* XCRemoteSwiftPackageReference "core-ios" */;
+			productName = Core;
+		};
+		2837AF0C2B0A5C2E0072B2D1 /* DataPersistence */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2837AF092B0A5C2E0072B2D1 /* XCRemoteSwiftPackageReference "core-ios" */;
+			productName = DataPersistence;
+		};
+		2837AF0E2B0A5C2E0072B2D1 /* Logger */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2837AF092B0A5C2E0072B2D1 /* XCRemoteSwiftPackageReference "core-ios" */;
+			productName = Logger;
+		};
+		2837AF102B0A5C2E0072B2D1 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2837AF092B0A5C2E0072B2D1 /* XCRemoteSwiftPackageReference "core-ios" */;
+			productName = Networking;
+		};
+		2837AF122B0A5C2E0072B2D1 /* PermissionManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2837AF092B0A5C2E0072B2D1 /* XCRemoteSwiftPackageReference "core-ios" */;
+			productName = PermissionManager;
 		};
 		289419832ADF42C000DDCFD1 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;

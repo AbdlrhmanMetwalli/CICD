@@ -16,11 +16,11 @@ jobs:
     steps:
       - uses: deepakputhraya/action-branch-name@master
         with:
-          regex: '([a-z])+\/([a-z])+'
-          allowed_prefixes: 'feature,bugfix'
+          regex: '([a-z])+\/([a-z0-9\-])+'
+          allowed_prefixes: 'feature,bugfix,enhancement,refactor'
           ignore: main,dev
-          min_length: 5
-          max_length: 20
+          min_length: 10
+          max_length: 25
 
       - uses: thehanimo/pr-title-checker@v1.4.1
         with:
@@ -46,8 +46,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-packages-
 
-      - name: Set IgnoreFileSystemDeviceInodeChanges flag
-        run: defaults write com.apple.dt.XCBuild IgnoreFileSystemDeviceInodeChanges -bool YES
+      - uses: chetan/git-restore-mtime-action@v2
 
       - name: Run Tests (No Cache)
         if: steps.packages-cache.outputs.cache-hit != 'true'
