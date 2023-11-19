@@ -1,0 +1,62 @@
+name: Pull Request
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - edited
+      - synchronize
+
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: macos-latest
+    steps:
+      - uses: deepakputhraya/action-branch-name@master
+        with:
+          regex: '([a-z])+\/([a-z0-9\-])+'
+          allowed_prefixes: 'feature,fix,refactor,enhancement'
+          ignore: main
+          min_length: 5
+          max_length: 50
+
+      - uses: robin-thomas-e1391/PR-title-validator@master
+        with:
+          regex: '^([a-z]+): .+'
+          regex_options: 'i' # Regex should be case insensitive.
+          custom_non_match_error: 'valid title options are [fix: title], [feature: title], [chore: title], [enhancement: title], [refactor: title]' # Custom error message if regex fails.
+          allowed_prefixes: 'fix,feature,chore,enhancement,refactor' # title should start with the given prefix
+          prefix_case_sensitive: false # title prefix are case insensitive
+          min_length: 10 # Min length of the title
+          max_length: 70 # Max length of the title
+
+      - uses: actions/checkout@v4
+
+      - name: Run swiftlint
+        run: fastlane lint
+
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Cache packages
+        uses: actions/cache@v3
+        id: packages-cache
+        with:
+          path: cache
+          key: ${{ runner.os }}-packages-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-packages-
+
+      # Alters the the modified time of source files to avoid trigering a clean xcode build.
+      - uses: chetan/git-restore-mtime-action@v2
+
+      - name: Run Tests (No Cache)
+        if: steps.packages-cache.outputs.cache-hit != 'true'
+        run: fastlane tests clone_source_packages:true
+
+      - name: Run Tests (Cache)
+        if: steps.packages-cache.outputs.cache-hit == 'true'
+        run: fastlane tests clone_source_packages:true skip_package_dependencies_resolution:true disable_package_automatic_updates:true skip_build:true

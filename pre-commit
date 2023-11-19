@@ -1,0 +1,22 @@
+#!/bin/sh
+
+
+# Run lint lane
+fastlane lint
+
+# Check if linting failed
+if [ $? -ne 0 ]; then
+    echo "Lint failed. Please fix before committing."
+    exit 1
+fi
+
+# Run Fastlane tests lane
+fastlane tests
+
+# Check if tests failed
+if [ $? -ne 0 ]; then
+    echo "Tests failed. Please fix before committing."
+    exit 1
+fi
+
+exit 0
